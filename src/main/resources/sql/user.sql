@@ -4,7 +4,7 @@ create table user(
 	name VARCHAR(30) NOT NULL COMMENT '用户名称',
 	account VARCHAR(30) NOT NULL COMMENT '登陆账号',
 	password VARCHAR(30) NOT NULL COMMENT '登陆密码',
-	gender INT COMMENT '性别',
+	gender INT COMMENT '性别1-男，2-女',
 	mobile VARCHAR(11) COMMENT '手机号码',
 	idno VARCHAR(30) COMMENT '身份证',
 	cardno VARCHAR(30) COMMENT '银行卡号',
@@ -15,3 +15,4 @@ create table user(
 	update_user VARCHAR(30) NOT NULL COMMENT '修改人',
 	PRIMARY KEY (id)
 );
+insert into user values('admin','admin','admin',1,'15555555555');

@@ -14,6 +14,7 @@
         <context:property-placeholder location="classpath:db.properties"/>
      <!-- 打开注解驱动 -->
     <mvc:annotation-driven/>
+    <!-- 访问静态资源 -->
     <mvc:default-servlet-handler/>
     <!-- 加载静态资源 -->
     <!-- <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
@@ -21,8 +22,7 @@
 	<mvc:resources mapping="/html/**" location="/WEB-INF/html/"/> -->
 	
     <!-- 自动扫描组件 -->
-    <context:component-scan base-package="controller"/>
-    <context:component-scan base-package="util"/>
+    <context:component-scan base-package="com"/>
 	<import resource="classpath:redis/spring-redis.xml"/>
     
     <!-- 配置jsp视图解析器 ，需要有jstl这个jar包，否则不能映射-->
@@ -45,7 +45,7 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="mapper"></property>
+		<property name="basePackage" value="com.mapper"></property>
 		<!--这里是value  -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>

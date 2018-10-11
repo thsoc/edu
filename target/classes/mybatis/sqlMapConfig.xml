@@ -8,9 +8,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</settings>
 	
 	<typeAliases>
-		<package name="pojo"/>
+		<package name="com.pojo"/>
 	</typeAliases>
 	<mappers>
-		<package name="mapper"/>
+		<package name="com.mapper"/>
 	</mappers>
 </configuration>
