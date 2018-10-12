@@ -16,7 +16,7 @@
     <result column="update_time" property="updateTime" jdbcType="DATE" />
     <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
   </resultMap>
-  <select id="findUser" parameterMap="map" resultType="User">
-  	select * from user where account = #{map.account} and password = #{map.password}
+  <select id="findUser" parameterType="map" resultType="User" >
+  	select * from user where account = #{account} and password = #{password}
   </select>
 </mapper>

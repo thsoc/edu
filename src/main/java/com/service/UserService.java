@@ -1,6 +1,6 @@
 package com.service;
 
-import com.exception.Login2Exception;
+import com.exception.SysException;
 
 public interface UserService {
 
@@ -9,8 +9,8 @@ public interface UserService {
 	 * @param username
 	 * @param password
 	 * @return
-	 * @throws Login2Exception 
+	 * @throws SysException 
 	 */
-	Boolean login(String username, String password) throws Login2Exception;
+	Boolean login(String username, String password) throws SysException;
 	
 }

@@ -1,6 +1,8 @@
 package com.exception;
 
-public class Login2Exception extends Exception{
+import com.util.ErrorCode;
+
+public class SysException extends Exception{
 
 	/**
 	 * 
@@ -8,10 +10,15 @@ public class Login2Exception extends Exception{
 	private static final long serialVersionUID = 1L;
 	private String message;
 	private String code;
-	public Login2Exception(String message, String code) {
+	public SysException(String message, String code) {
 		super();
 		this.message = message;
 		this.code = code;
+	}
+
+	public SysException(ErrorCode errorCode) {
+		this.message = errorCode.getMessage();
+		this.code = errorCode.getCode();
 	}
 
 	public String getCode() {

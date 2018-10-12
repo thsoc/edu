@@ -8,10 +8,11 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.exception.Login2Exception;
+import com.exception.SysException;
 import com.mapper.UserMapper;
 import com.pojo.User;
 import com.service.UserService;
+import com.util.ErrorCode;
 
 @Service(value="userService")
 @Transactional
@@ -21,13 +22,13 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 	
 	@Override
-	public Boolean login(String account, String password) throws Login2Exception {
+	public Boolean login(String account, String password) throws SysException {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("account", account);
 		map.put("password", password);
 		User findUser = userMapper.findUser(map);
 		if(findUser == null) {
-			throw new Login2Exception("001","输入信息有误！");
+			throw new SysException(ErrorCode.USER_NO_EXIST);
 		}else {
 			return true;
 		}

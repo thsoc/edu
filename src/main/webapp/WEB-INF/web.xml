@@ -54,8 +54,15 @@
 	<servlet-name>default</servlet-name>
 	<url-pattern>*.js</url-pattern>
 </servlet-mapping> -->
-
+  <error-page>
+  	<error-code>400</error-code>
+  	<location>/jsp/error/error_400.html</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/jsp/error/error_500.html</location>
+  </error-page>
   <welcome-file-list>
-    <welcome-file>/html/login.html</welcome-file>
+    <welcome-file>login.html</welcome-file>
   </welcome-file-list>
 </web-app>
