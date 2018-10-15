@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 	
 	@Override
-	public Boolean login(String account, String password) throws SysException {
+	public Boolean login(String username, String password) throws SysException {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("account", account);
+		map.put("account", username);
 		map.put("password", password);
 		User findUser = userMapper.findUser(map);
 		if(findUser == null) {

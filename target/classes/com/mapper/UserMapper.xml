@@ -17,6 +17,6 @@
     <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
   </resultMap>
   <select id="findUser" parameterType="map" resultType="User" >
-  	select * from user where account = #{account} and password = #{password}
+  	select * from user where account = #{map.account} and password = #{map.password}
   </select>
 </mapper>

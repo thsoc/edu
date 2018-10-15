@@ -9,10 +9,11 @@ create table user(
 	idno VARCHAR(30) COMMENT '身份证',
 	cardno VARCHAR(30) COMMENT '银行卡号',
 	role_code VARCHAR(11) NOT NULL COMMENT '角色代码',
-	create_time DATE not NULL COMMENT '创建时间',
+	create_time TIMESTAMP not NULL COMMENT '创建时间',
 	create_user VARCHAR(30) NOT NULL COMMENT '创建人',
-	update_time DATE not NULL COMMENT '修改时间',
+	update_time TIMESTAMP not NULL COMMENT '修改时间',
 	update_user VARCHAR(30) NOT NULL COMMENT '修改人',
 	PRIMARY KEY (id)
 );
-insert into user values('admin','admin','admin',1,'15555555555');
+insert into user(name,account,password,gender,mobile,role_code,create_time,create_user,update_time,update_user) 
+	values('admin','admin','admin',1,'15555555555','role_test',now(),'admin',now(),'admin');

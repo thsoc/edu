@@ -2,6 +2,7 @@ package com.mapper;
 
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 
 import com.pojo.User;
 
@@ -12,5 +13,5 @@ public interface UserMapper {
 	 * @param map
 	 * @return
 	 */
-	User findUser(Map<String, String> map);
+	User findUser(@Param("map")Map<String, String> map);
 }
